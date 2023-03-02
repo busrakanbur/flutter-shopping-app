@@ -2,11 +2,13 @@ import 'package:get/get.dart';
 
 class HomeController extends GetxController {
   RxString password = ''.obs;
+  RxString email = ''.obs;
   RxString displayText = 'Enter a password'.obs;
   RxDouble passwordStrength = 0.0.obs;
   RegExp numRegExpress = RegExp(r".*[0-9].*");
   RegExp letterRegExpress = RegExp(r".*[A-Za-z].*");
   RxBool isPasswordHidden = true.obs;
+  RxString falseLogin = ''.obs;
 
   @override
   void onInit() {
@@ -41,6 +43,14 @@ class HomeController extends GetxController {
         passwordStrength.value = 1;
         displayText.value = "Password  strongest";
       }
+    }
+  }
+
+  void checkLogin(String email1, String password1) {
+    password.value = password1;
+    email.value = email1;
+    if (password.value.isEmpty || email.value.isEmpty) {
+      falseLogin.value = 'Missing information...';
     }
   }
 }
