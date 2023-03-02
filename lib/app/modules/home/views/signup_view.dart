@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -28,14 +29,14 @@ class SignupView extends GetView<HomeController> {
                   Container(
                     margin: EdgeInsets.only(top: 20),
                     padding: EdgeInsets.all(20),
-                    height: 60,
-                    width: 450,
+                    height: 10.h,
+                    width: 90.w,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
                         color: Colors.transparent,
                         border: Border.all(
                             color: Color.fromARGB(255, 106, 106, 106))),
-                    child: TextField(
+                    child: TextFormField(
                       onChanged: (value) {},
                       decoration: const InputDecoration(
                           icon: Icon(Icons.person),
@@ -54,7 +55,7 @@ class SignupView extends GetView<HomeController> {
                         color: Colors.transparent,
                         border: Border.all(
                             color: Color.fromARGB(255, 106, 106, 106))),
-                    child: TextField(
+                    child: TextFormField(
                       onChanged: (value) {},
                       decoration: const InputDecoration(
                           icon: Icon(Icons.person),
@@ -73,7 +74,7 @@ class SignupView extends GetView<HomeController> {
                         color: Colors.transparent,
                         border: Border.all(
                             color: Color.fromARGB(255, 106, 106, 106))),
-                    child: TextField(
+                    child: TextFormField(
                       onChanged: (value) {},
                       decoration: const InputDecoration(
                           icon: Icon(Icons.person),
@@ -92,7 +93,7 @@ class SignupView extends GetView<HomeController> {
                         color: Colors.transparent,
                         border: Border.all(
                             color: Color.fromARGB(255, 106, 106, 106))),
-                    child: TextField(
+                    child: TextFormField(
                       onChanged: (value) {},
                       decoration: const InputDecoration(
                           icon: Icon(Icons.person),
@@ -111,7 +112,7 @@ class SignupView extends GetView<HomeController> {
                         color: Colors.transparent,
                         border: Border.all(
                             color: Color.fromARGB(255, 106, 106, 106))),
-                    child: TextField(
+                    child: TextFormField(
                       onChanged: (value) {},
                       decoration: const InputDecoration(
                           icon: Icon(Icons.person),
@@ -123,10 +124,33 @@ class SignupView extends GetView<HomeController> {
                   GestureDetector(
                     onTap: () {
                       Get.defaultDialog(
+                          title: "Done!",
+                          titleStyle: TextStyle(color: Colors.white),
+                          confirm: GestureDetector(
+                            onTap: () {
+                              Get.toNamed('/signup');
+                            },
+                            child: GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                alignment: Alignment.center,
+                                height: 40,
+                                width: 160,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30),
+                                    color: Color.fromARGB(255, 89, 89, 89)),
+                                child: Text(
+                                  "> LOGIN",
+                                  style: TextStyle(
+                                      fontSize: 18, color: Colors.white),
+                                ),
+                              ),
+                            ),
+                          ),
                           backgroundColor: Color.fromARGB(255, 41, 41, 41),
                           content: Text('Succesfully created an account.',
                               style: TextStyle(color: Colors.white)));
-                      Get.toNamed('/login');
+                      //Get.toNamed('/login');
                     },
                     child: Container(
                       alignment: Alignment.center,
