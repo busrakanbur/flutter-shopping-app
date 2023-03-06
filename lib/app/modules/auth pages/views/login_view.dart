@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_expandable_bottom_sheet/app/routes/app_pages.dart';
-
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
-import '../controllers/home_controller.dart';
+import '../controllers/auth_controller.dart';
 
-class LoginView extends GetView<HomeController> {
+class LoginView extends GetView<AuthController> {
   const LoginView({super.key});
 
   @override
@@ -17,7 +15,7 @@ class LoginView extends GetView<HomeController> {
         body: Container(
             height: Get.height,
             width: Get.width,
-            padding: EdgeInsets.symmetric(horizontal: 60),
+            padding: const EdgeInsets.symmetric(horizontal: 60),
             color: Colors.white,
             child: SingleChildScrollView(
                 child: Form(
@@ -30,7 +28,7 @@ class LoginView extends GetView<HomeController> {
                       Obx(
                         () => passwordTextFormField(),
                       ),
-                      LoginButton(),
+                      loginButton(),
                       orCreateAccountText()
                     ])))),
       ),
@@ -44,7 +42,7 @@ class LoginView extends GetView<HomeController> {
         },
         child: Padding(
           padding: EdgeInsets.only(top: 2.h),
-          child: Text(
+          child: const Text(
             'or Create an account',
             style:
                 TextStyle(fontSize: 13, color: Color.fromARGB(255, 81, 81, 81)),
@@ -52,17 +50,17 @@ class LoginView extends GetView<HomeController> {
         ));
   }
 
-  GestureDetector LoginButton() {
+  GestureDetector loginButton() {
     return GestureDetector(
       onTap: () {
         if (controller.checkLogin()) {
-          Get.toNamed('/signup');
+          Get.toNamed('/datepicker');
         } else {
           Get.defaultDialog(
               title: "Try again",
-              titleStyle: TextStyle(color: Colors.white),
-              backgroundColor: Color.fromARGB(255, 41, 41, 41),
-              content: Text('Invalid email or password.',
+              titleStyle: const TextStyle(color: Colors.white),
+              backgroundColor: const Color.fromARGB(255, 41, 41, 41),
+              content: const Text('Invalid email or password.',
                   style: TextStyle(color: Colors.white)));
         }
       },
@@ -73,8 +71,8 @@ class LoginView extends GetView<HomeController> {
         width: 70.w,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
-            color: Color.fromARGB(255, 54, 54, 54)),
-        child: Text(
+            color: const Color.fromARGB(255, 54, 54, 54)),
+        child: const Text(
           "LOGIN NOW",
           style: TextStyle(fontSize: 18, color: Colors.white),
         ),
@@ -91,7 +89,7 @@ class LoginView extends GetView<HomeController> {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
           color: Colors.transparent,
-          border: Border.all(color: Color.fromARGB(255, 106, 106, 106))),
+          border: Border.all(color: const Color.fromARGB(255, 106, 106, 106))),
       child: TextFormField(
         controller: controller.passwordController,
         onSaved: (value) {
@@ -102,10 +100,10 @@ class LoginView extends GetView<HomeController> {
         },
         obscureText: controller.isPasswordHidden.value,
         decoration: InputDecoration(
-            icon: Icon(Icons.lock),
-            border: UnderlineInputBorder(),
+            icon: const Icon(Icons.lock),
+            border: const UnderlineInputBorder(),
             hintText: 'Password',
-            hintStyle: TextStyle(fontSize: 13),
+            hintStyle: const TextStyle(fontSize: 13),
             suffix: InkWell(
               child: Icon(
                 controller.isPasswordHidden.value
@@ -132,7 +130,7 @@ class LoginView extends GetView<HomeController> {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
           color: Colors.transparent,
-          border: Border.all(color: Color.fromARGB(255, 106, 106, 106))),
+          border: Border.all(color: const Color.fromARGB(255, 106, 106, 106))),
       child: TextFormField(
         controller: controller.emailController,
         onSaved: (value) {
@@ -152,7 +150,7 @@ class LoginView extends GetView<HomeController> {
   }
 
   Text appTitle() {
-    return Text('SHOPP',
+    return const Text('SHOPP',
         style: TextStyle(fontSize: 26, fontWeight: FontWeight.w700));
   }
 
@@ -163,24 +161,3 @@ class LoginView extends GetView<HomeController> {
     );
   }
 }
-
-
-// Text(
-//                     controller.displayText.value,
-//                     style: TextStyle(
-//                       fontSize: 12,
-//                       color: controller.passwordStrength.value <= 1 / 4
-//                           ? Colors.red
-//                           : controller.passwordStrength.value == 2 / 4
-//                               ? Colors.amber
-//                               : controller.passwordStrength.value == 3 / 4
-//                                   ? Colors.deepPurpleAccent
-//                                   : Colors.green,
-//                     ),
-//                   ),
-
-
-
-
-
-      

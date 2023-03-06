@@ -1,8 +1,8 @@
+import 'package:flutter_expandable_bottom_sheet/app/modules/date%20picker/views/date_view.dart';
 import 'package:get/get.dart';
-import '../modules/home/bindings/home_binding.dart';
-import '../modules/home/bindings/signup_bindings.dart';
-import '../modules/home/views/login_view.dart';
-import '../modules/home/views/signup_view.dart';
+import '../bindings/all_bindings.dart';
+import '../modules/auth pages/views/login_view.dart';
+import '../modules/auth pages/views/signup_view.dart';
 
 part 'app_routes.dart';
 
@@ -11,17 +11,22 @@ class AppPages {
 
   static const initial = Routes.login;
   static const signup = Routes.signup;
+  static const datepicker = Routes.datepicker;
 
   static final routes = [
     GetPage(
       name: _Paths.login,
-      page: () => LoginView(),
-      binding: HomeBindings(),
+      page: () => const LoginView(),
+      binding: AuthBindings(),
     ),
     GetPage(
       name: _Paths.signup,
-      page: () => SignupView(),
-      binding: SignupBindings(),
+      page: () => const SignupView(),
+      binding: AuthBindings(),
     ),
+    GetPage(
+        name: _Paths.datepicker,
+        page: () => const DatePickerView(),
+        binding: DateBindings()),
   ];
 }
