@@ -1,4 +1,5 @@
 import 'package:flutter_expandable_bottom_sheet/app/modules/date%20picker/views/date_view.dart';
+import 'package:flutter_expandable_bottom_sheet/app/modules/rate%20pages/views/like_view.dart';
 import 'package:get/get.dart';
 import '../bindings/all_bindings.dart';
 import '../modules/auth pages/views/login_view.dart';
@@ -12,6 +13,7 @@ class AppPages {
   static const initial = Routes.login;
   static const signup = Routes.signup;
   static const datepicker = Routes.datepicker;
+  static const like = Routes.like;
 
   static final routes = [
     GetPage(
@@ -28,5 +30,9 @@ class AppPages {
         name: _Paths.datepicker,
         page: () => const DatePickerView(),
         binding: DateBindings()),
+    GetPage(
+        name: _Paths.like,
+        page: () => const LikeView(),
+        binding: RateBindings()),
   ];
 }

@@ -102,6 +102,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_elegant_number_button:
+    dependency: "direct main"
+    description:
+      name: flutter_elegant_number_button
+      sha256: "2d41d1256e38df267df14146e79733eed5ff74b79b58500be19b23669119fb8f"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.6"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -163,6 +171,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.5"
+  like_button:
+    dependency: "direct main"
+    description:
+      name: like_button
+      sha256: "08e6a45b78888412df5d351786c550205ad3a677e72a0820d5bbc0b063c8a463"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.5"
   lints:
     dependency: transitive
     description:

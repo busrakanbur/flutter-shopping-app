@@ -7,10 +7,12 @@ abstract class Routes {
   static const login = _Paths.login;
   static const signup = _Paths.signup;
   static const datepicker = _Paths.datepicker;
+  static const like = _Paths.like;
 }
 
 abstract class _Paths {
   static const login = '/login';
   static const signup = '/signup';
   static const datepicker = '/datepicker';
+  static const like = '/like';
 }

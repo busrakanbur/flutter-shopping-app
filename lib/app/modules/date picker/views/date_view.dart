@@ -33,7 +33,7 @@ class DatePickerView extends GetView<DateController> {
                   onPressed: () {
                     controller.chooseDateRange();
                   },
-                  child: const Text('Select Range')),
+                  child: const Text('Select Date Range')),
             ],
           ),
         )));

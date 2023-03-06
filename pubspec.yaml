@@ -42,6 +42,8 @@ dependencies:
   sizer: ^2.0.15
   date_format: ^2.0.7
   intl: ^0.18.0
+  flutter_elegant_number_button: ^0.0.6
+  like_button: ^2.0.5
 
 dev_dependencies:
   flutter_test:
