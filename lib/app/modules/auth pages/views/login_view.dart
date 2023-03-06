@@ -29,7 +29,12 @@ class LoginView extends GetView<AuthController> {
                         () => passwordTextFormField(),
                       ),
                       loginButton(),
-                      orCreateAccountText()
+                      orCreateAccountText(),
+                      ElevatedButton(
+                          onPressed: () {
+                            Get.toNamed("/like");
+                          },
+                          child: const Text("GO"))
                     ])))),
       ),
     );
