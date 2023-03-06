@@ -1,5 +1,5 @@
 import 'package:flutter_expandable_bottom_sheet/app/modules/date%20picker/controllers/date_controller.dart';
-import 'package:flutter_expandable_bottom_sheet/app/modules/rate%20pages/controllers/like_controller.dart';
+import 'package:flutter_expandable_bottom_sheet/app/modules/rate%20pages/controllers/rate_controller.dart';
 import 'package:get/get.dart';
 import '../modules/auth pages/controllers/auth_controller.dart';
 
@@ -24,8 +24,8 @@ class DateBindings extends Bindings {
 class RateBindings extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<LikeController>(
-      () => LikeController(),
+    Get.lazyPut<RateController>(
+      () => RateController(),
     );
   }
 }
