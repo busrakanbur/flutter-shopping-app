@@ -1,2 +1,1 @@
-# flutter-shopping-app
-using getx
+# flutter-expansion-panel

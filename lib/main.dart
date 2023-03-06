@@ -1,29 +1,22 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_expandable_bottom_sheet/view/expansion_panel_view.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:sizer/sizer.dart';
 
-import 'app/routes/app_pages.dart';
+void main() {
+  runApp(const MyApp());
+}
 
-void main() async {
-  await GetStorage.init();
-  runApp(
-    Sizer(
-      builder: (context, orientation, deviceType) {
-        return GetMaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: "Application",
-          theme: ThemeData(
-            colorScheme: ColorScheme.fromSwatch().copyWith(
-              primary: const Color.fromARGB(255, 46, 46, 46),
-              secondary: Colors.black54,
-            ),
-          ),
-          initialRoute: AppPages.initial,
-          getPages: AppPages.routes,
-        );
-      },
-    ),
-  );
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Sizer(builder: (context, orientation, deviceType) {
+      return GetMaterialApp(
+        title: 'Expansion Panel',
+        home: ExpansionPanelView(),
+        debugShowCheckedModeBanner: false,
+      );
+    });
+  }
 }
